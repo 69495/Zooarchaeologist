@@ -1,0 +1,2 @@
+# Zooarchaeologist
+mastodonを掘り返したり傾向を掴むためのツール
