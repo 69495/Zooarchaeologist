@@ -1,1 +1,6 @@
 *.txt
+*.json
+
+mstdn/json
+mstdn/node_modules
+mstdn/__pycache__
