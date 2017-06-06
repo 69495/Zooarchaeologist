@@ -15,7 +15,7 @@ def exec(action,target_id):
         mastodon.status_reblog(target_id)
     elif action == "status":
         print(mastodon.status_context(target_id))
-    elif action == "delete"
+    elif action == "delete":
         mastodon.status_delete(target_id)
     else:
         print("action is enpty")
