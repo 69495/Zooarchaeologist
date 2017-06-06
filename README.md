@@ -45,6 +45,9 @@ if __name__ == '__main__':
 ```
 
 
+python hoge.py
+
+
 ```python:fuga.py
 from mastodon import Mastodon
 from mining import mining
