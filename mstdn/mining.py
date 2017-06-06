@@ -12,9 +12,12 @@ def mining(id,return_type="list"):
     print(return_type + " is selected!")
 
     Mastodon = login()
-    initial_max_id = 17350000 #latest toot
 
-    toot = Mastodon.account_statuses(id, max_id=initial_max_id, since_id=None, limit=40)
+    #timelineからlastestなmax_idを取得
+    tl = Mastodon.timeline_local(limit=1)
+    initial_max_id = tl[0]['id']
+
+    toot = Mastodon.account_statuses(id, initial_max_id, None, 40)
     while True:
         max_lenge = len(toot) - 1
         last_max_id = toot[max_lenge]['id']
