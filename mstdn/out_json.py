@@ -10,5 +10,5 @@ def jsoner(data,filename_ahead): #strでくれ
 
     print("complete!")
 
-if __name__ == '__main__':
-    main()
+if __name__ == '__out_json__':
+    out_json()
