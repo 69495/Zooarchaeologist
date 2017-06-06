@@ -1,7 +1,9 @@
 *.txt
 *.json
 
+test.py
+
 mstdn/json
 mstdn/node_modules
 mstdn/__pycache__
-test.py
+venvtest
