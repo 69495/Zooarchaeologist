@@ -8,10 +8,10 @@ return_typeはjson or list
 defaultはlistで返す
 '''
 
-def mining(id,return_type="list"):
+def mining(id, return_type="list", switch=None):
     print(return_type + " is selected!")
 
-    Mastodon = login()
+    Mastodon = login(switch)
 
     #timelineからlastestなmax_idを取得
     tl = Mastodon.timeline_local(limit=1)
@@ -30,6 +30,9 @@ def mining(id,return_type="list"):
         final_max_lenge = len(last_toot) -1
         # account = Mastodon.account(id)
         # count = account['statuses_count']
+
+        toot_count = toot[0]['account']['statuses_count']
+        print(str(len(toot)) + '/' +  str(toot_count))
 
 
         if final_max_lenge < 39:
