@@ -1,7 +1,7 @@
 import json
 from datetime import datetime
 
-def jsoner(data,filename_ahead): #strでくれ
+def jsoner(data,filename_ahead):
 
     time = datetime.now().strftime("%Y-%m-%d-%H%M")
     filename = filename_ahead + "_" + time + "_.json"

@@ -1,10 +1,10 @@
 from mastodon import Mastodon
 from login import login
 
-def exec(action,target_id):
+def exec(action, target_id=None, switch=None):
 
     # target_id = int(input())
-    mastodon = login()
+    mastodon = login(switch)
 
     #action
     if action == "favourite":
@@ -17,6 +17,8 @@ def exec(action,target_id):
         print(mastodon.status_context(target_id))
     elif action == "delete":
         mastodon.status_delete(target_id)
+    elif action == "toot":
+        mastodon.toot("toot by python")
     else:
         print("action is enpty")
 
