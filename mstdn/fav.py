@@ -19,11 +19,12 @@ def fav(return_type="list", switch=None):
     Mastodon = login(switch)
     my_cred = Mastodon.account_verify_credentials()
     id = my_cred['id']
+    print("Your id is {0}".format(id))
     #lastestなmax_idを取得
     initial_max_id = Mastodon.fav(None,None,limit=1)
     initial_max_id = initial_max_id[-1]['max_id']
     fav = Mastodon.fav(initial_max_id, None, 40)
-    print(initial_max_id)
+    print("Initial max id is {0}".format(initial_max_id))
 
     try_num = 0
 
