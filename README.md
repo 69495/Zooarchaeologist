@@ -5,6 +5,10 @@ mastodonを掘り返したり傾向を掴むためのツール
 
 一応tootとかfavoriteとかboostとかも出来るがそれはMastodon.pyでも出来る
 
+技術力が無いせいでMastodon.pyを無茶苦茶な方法で拡張して使うという解決策になってしまった(一部機能)
+
+ここには出来る限り使い方を書こうと思う
+
 
 ##使い方
 python 3.6
@@ -20,7 +24,7 @@ mastodon.log_in("mail_address", "password",to_file = "my_usercred_mstdn.txt")
 ```
 
 
-python hoge.py
+python hoge.py(tootの全削除)
 
 
 ```python:hoge.py
@@ -45,19 +49,43 @@ if __name__ == '__main__':
 ```
 
 
-python hoge.py
+python fuga.py(その人のtootをjsonで保存)
 
 
 ```python:fuga.py
 from mastodon import Mastodon
 from mining import mining
-    main()
+
+    main():
         user_id = account_id
         mining(user_id,"json")
 
 if __name__ == '__main__':
     main()
 ```
+
+python huge.py(お気に入りをjsonで保存/Mastodon.pyの書き換えが必要)
+
+
+```python:huge.py
+from fav import fav
+import time
+
+def main():
+
+    start = time.time()
+
+    fav("json",)
+
+    elapsed_time = time.time() - start
+    print("Time:{0}".format(elapsed_time) + "{sec}")
+
+if __name__ == '__main__':
+    main()
+```
+
+'''python:Mastodon.py
+'''
 
 
 Mastodon.py
