@@ -5,19 +5,38 @@ mastodonを掘り返したり傾向を掴むためのツール
 
 一応tootとかfavoriteとかboostとかも出来るがそれはMastodon.pyでも出来る
 
-技術力が無いせいでMastodon.pyを無茶苦茶な方法で拡張して使うという解決策になってしまった(一部機能)
+技術力が無いせいでMastodon.pyを無茶苦茶な方法で拡張して使うという解決策になってしまった(改変したMastodon.pyは一緒に入ってます)
 
 ここには出来る限り使い方を書こうと思う
 
 
 ##使い方
-python 3.6
+
+
+python 3.6をインストールする(PATHを通す)
 
 
 pip3 install Mastodon.py
 
 
+このレポジトリをクローンする(わからなければzipでダウンロードして展開する)
+
+
+コマンドプロンプトで展開したディレクトリまで行く
+
+
+python setup.py
+
+
+と言った具合に実行する
+
+
+setup.pyを実行後、用途に応じてPythonを書いてそれを実行する(下のコードを丸写しにしても動くのでテキストエディタで書いてそれを実行しよう!)
+
+
+
 ```python:setup.py
+from mastodon import Mastodon
 Mastodon.create_app("mastdnPy", api_base_url = "https://mstdn.jp", to_file = "my_clientcred_mstdn.txt")
 mastodon = Mastodon(client_id="my_clientcred_mstdn.txt",api_base_url = "https://mstdn.jp")
 mastodon.log_in("mail_address", "password",to_file = "my_usercred_mstdn.txt")
@@ -83,9 +102,6 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-
-'''python:Mastodon.py
-'''
 
 
 Mastodon.py
