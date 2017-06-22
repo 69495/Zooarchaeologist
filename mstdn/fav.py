@@ -39,8 +39,7 @@ def fav(return_type="list", switch=None):
         last_length = len(last_fav)
 
         length = (len(fav) - try_num * 1)
-        print(str(length))
-        print(last_length)
+        print("count: {0} ({1})".format(str(length-1),last_length-1))
         time.sleep(3)
 
         if last_length != 41:
