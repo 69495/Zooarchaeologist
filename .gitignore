@@ -1,7 +1,7 @@
 *.txt
 *.json
 
-test.py
+test*.py
 
 mstdn/json
 mstdn/node_modules
